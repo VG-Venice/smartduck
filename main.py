@@ -30,4 +30,8 @@ def physics():
 def about_us():
   return render_template('about_us.html', site_name="SmartDuck")
 
+@app.route('/dashboard')
+def dashboard():
+  return render_template('dashboard.html', site_name="SmartDuck")
+
 app.run(host='0.0.0.0', port=81, debug=True)

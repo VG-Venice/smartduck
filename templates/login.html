@@ -1,1 +1,63 @@
-Login
+{% include 'links.html' %}
+<style>
+   body{
+     background-image: url('/static/login.jpg');
+     background-size: cover;
+  }
+  .form{
+    background-color: white;
+    opacity: 0.5;
+    width: 45%;
+    height: 60vh;
+    margin-top: 19vh;
+  }
+  .main-div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .loginh1{
+    font-family: 'Mouse Memoirs', sans-serif;
+    text-align: center;
+    color: mediumpurple;
+    font-size: 45px;
+  }
+  label{
+    margin: top; 30px;
+    font-family: 'Mouse Memoirs', sans-serif;
+    margin-left: 13vw;
+    margin-bottom: 5px;
+    font-size: 25px;
+    color: tomato;
+  }
+  .username, .password{
+    width: 20vw;
+    margin-left: 12.5vw;
+    margin-bottom: 10px;
+    border: none;
+    border-bottom: 3px solid brown;
+    padding: 3px 4px;
+  }
+  .submit{
+    width: 6vw;
+    margin-left: 19.5vw;
+    /* border: none; */
+    border-bottom: 3px solid brown;
+    background-color: none;
+  }
+  a{
+    text-decoration: none;
+  }
+</style>
+<form>
+<div class="main-div">
+  <div class="form"><br>
+    <h1 class="loginh1 mt-3">Login to {{site_name}}</h1><br><br>
+    <label for="username">Username</label><br>
+    <input class="username mb-5" type="text" name="username" placeholder="Enter your username"/><br>
+    <label for="username">Password</label><br>
+    <input class="password mb-5" type="password" name="password" placeholder="Enter your password"/><br><br>
+    <button class="submit" name="submitbtn"><a href="/dashboard">Login</a></button>
+  </div>
+</div>
+</form>
