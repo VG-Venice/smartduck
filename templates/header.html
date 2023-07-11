@@ -56,21 +56,24 @@
     <nav id="navbar">
 <ul class="mx-2 nav nav-pills">
   <li class="nav-item mx-2">
-    <a id="app_icon" class="nav-link" href="#">SmartyNotes</a>
+    <a id="app_icon" class="nav-link" href="/"><i style="color: #fff724;" class="fa-light fa-duck"></i> {{site_name}}</a>
   </li>
   <li class="nav-item mt-2">
-    <a style="color: white;margin-left: 19vw;" class="nav-link" href="/">Home</a>
+    <a style="color: white;margin-left: 17vw;" class="nav-link" href="/">Home</a>
   </li>
     <li class="nav-item mt-2">
-    <a style="color: white;" class="nav-link" href="#">About us</a>
+    <a style="color: white;" class="nav-link" href="/about_us">About us</a>
   </li>
       <li class="nav-item mt-2">
-    <a style="color: white;" class="nav-link" href="#">Physics</a>
+    <a style="color: white;" class="nav-link" href="/physics">Physics</a>
   </li>
       <li class="nav-item mt-2">
-    <a style="color: white;" class="nav-link" href="#">Chemistry</a>
+    <a style="color: white;" class="nav-link" href="/chemistry">Chemistry</a>
   </li>
-    <li style="margin-left: 22vw;" id="login" class="nav-item mt-2">
+        <li class="nav-item mt-2">
+    <a style="color: white;" class="nav-link" href="/maths">Maths</a>
+  </li>
+    <li style="margin-left: 20vw;" id="login" class="nav-item mt-2">
     <a class="nav-link" href="/login">Login</a>
   </li>
   <li id="signup" class="nav-item mt-2">
@@ -79,10 +82,10 @@
 </ul>
     </nav>
     </header>
-   <h1 style="">Welcome to {{site_name}}</h1>
+   <h1 style="">Welcome to {{site_name}}...</h1>
    <h2> Find your notes for <span class="auto-type"></span></h2>
-   <button style="background-color: mediumpurple;padding: 8px 16px;border: none;border-radius: 8px;color: white;margin-left: 24px;margin-top: 10px;" id="getstarted" class="btn btn-warning"> Get Started <i class="fa-solid fa-arrow-right mx-2 mt-1"></i></button>
-    <div id="to"></div>
+  <a style="text-decoration: none;" href="#scrollh1"> <button style="background-color: mediumpurple;padding: 8px 16px;border: none;border-radius: 8px;color: white;margin-left: 28px;margin-top: 10px;" id="getstarted" class="btn btn-warning"> Get Started <i class="fa-solid fa-arrow-right mx-2 mt-1"></i></button></a>
+    <div id="to"><h1 id="scrollh1" class="mb-5" style="z-index: 2;text-align: center;font-size: 52px;color: mediumpurple;rotate: 180deg;margin-top: -10px;margin-bottom: 20px;border: 1px solid white;"> Explore our content</h1></div>
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
     <script>
       var typed = new Typed(".auto-type", {
