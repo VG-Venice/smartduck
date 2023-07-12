@@ -14,18 +14,6 @@ def login():
 def signup():
   return render_template('signup.html', site_name="SmartDuck")
 
-@app.route('/maths')
-def maths():
-  return render_template('maths.html', site_name="SmartDuck")
-
-@app.route('/chemistry')
-def chemistry():
-  return render_template('chemistry.html', site_name="SmartDuck")
-
-@app.route('/physics')
-def physics():
-  return render_template('physics.html', site_name="SmartDuck")
-
 @app.route('/about_us')
 def about_us():
   return render_template('about_us.html', site_name="SmartDuck")
