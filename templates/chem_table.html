@@ -1,16 +1,23 @@
+{% include 'links.html' %}
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
 <style>
   *{border: none;}
+  body{
+    background-color: #001133;
+  }
 html { width: 100%; font-family: sans-serif; background-color: #fdfdfd; }
 @media (max-width: 600px) { html { width: 600px; } }
 @media (max-width: 800px) { body { margin: 0; } }
 h1 { font-size: 24px; text-align: center; color: #444; margin-bottom: -10px; }
 h2 { font-size: 16px; text-align: center; color: #444; margin-bottom: 2px; }
 h2 span { cursor: pointer; border-style: outset; color: #444;
-          border-width: 2px; padding: 2px; font-weight: normal; }
+          border-width: 2px; padding: 4px; font-weight: normal; }
 h2 span.on { border-style: inset; text-shadow: 1px 1px 0 #444; }
 #detour { font-size: 11px; line-height: 3; text-align: center; color: #333; }
 #footnote { font-size: 10px; text-align: center; color: #333; }
-#periodic { margin: 0 auto; border-spacing: 0px; }
+#periodic { margin: 0 auto; border-spacing: 0px;}
 @media (min-width: 701px) and (max-width: 800px)
   { #periodic { border-spacing: 0px; } }
 @media (max-width: 700px) { #periodic { border-spacing: 0px; } }
@@ -19,7 +26,7 @@ h2 span.on { border-style: inset; text-shadow: 1px 1px 0 #444; }
 @media (max-width: 700px) { #periodic tr td { border-width: 2px; } }
 #periodic tr td.empty { background-color: transparent; cursor: auto;text-align: left;border: none;}
 #periodic tr.spacer td { height: 10px; }
-#periodic tr td sup { font-size: 11px; display: block; text-align: center; }
+#periodic tr td sup { font-size: 11px; display: block; text-align: center;padding: 9px 11px;}
 #periodic tr td { font-size: 15px; text-align: center; position: relative; }
 #periodic tr td.sel { border-style: inset; text-shadow: 1px 1px 1px #222; }
 #periodic tr td.sel sup::before { content: '\25CF'; color: #0f0; font-size: 8px;
@@ -34,11 +41,87 @@ h2 span.on { border-style: inset; text-shadow: 1px 1px 0 #444; }
                     text-align: left; vertical-align: top;
                     font-size: 16px; color: #888; text-decoration: none; }
 table.hide_optional tr.optional { display: none; }
+      ul li{
+        font-size: 18px;
+      }
+      #app_icon{
+        color: mediumpurple;
+        font-size:26px;
+      }
+      nav{
+        background-color: none;
+        font-family: 'Mouse Memoirs', sans-serif;
+        box-shadow: 10px 10px 20px white;
+      }
+      #login a, #signup a{
+        color: white;
+      }
+      #navbar{
+      }
+      header{
+        background-image: url('/static/bg.jpg');
+        background-repeat: no-repeat;
+        height: 60vw;
+        background-size: cover;
+      }
+     #to{
+       background-color: white;
+       width: 100vw;
+       height: 192px;
+       border-bottom: 2px white solid;
+       border-bottom-left-radius: 200%;
+       border-bottom-right-radius: 200%;
+      rotate: 180deg;
+      margin-top: 290px;
+       }
+      h1{
+        color: mediumpurple;
+        margin-top: -650px;
+        margin-left: 30px;
+        font-size: 60px;
+        }  
+      h2{
+        color: white;
+        margin-top: -10px;
+        margin-left: 30px;
+        font-size: 50px;
+        } 
+      .auto-type, span{
+       color: #fff724;
+      }
  </style>
-
-<table id="periodic">
+<nav id="navbar">
+<ul class="mx-2 nav nav-pills">
+  <li class="nav-item mx-2">
+    <a id="app_icon" class="nav-link" href="/"><i style="color: #fff724;" class="fa-light fa-duck"></i> {{site_name}}</a>
+  </li>
+  <li class="nav-item mt-2">
+    <a style="color: white;margin-left: 24vw;" class="nav-link" href="/">Home</a>
+  </li>
+    <li class="nav-item mt-2">
+    <a style="color: white;" class="nav-link" href="/about_us">About us</a>
+  </li>
+      <li class="nav-item mt-2">
+    <a style="color: white;" class="nav-link" href="/physics">Physics</a>
+  </li>
+      <li class="nav-item mt-2">
+    <a style="color: white;" class="nav-link" href="/chemistry">Chemistry</a>
+  </li>
+        <li class="nav-item mt-2">
+    <a style="color: white;" class="nav-link" href="/maths">Maths</a>
+  </li>
+    <li style="margin-left: 30%;" id="login" class="nav-item mt-2">
+    <a class="nav-link" href="/login">Login</a>
+  </li>
+  <li id="signup" class="nav-item mt-2">
+    <a href="/signup" class="nav-link">SignUp</a>
+  </li>
+</ul>
+    </nav>
+  <br>
+<table class="mt-2" id="periodic">
   <tr id="p1">
-   <td style="background: #ff9999;border: none; margin-left: -13px;padding: 5px 5px;"" id="H" title="Hydrogen"><sup>1</sup>H</td>
+   <td style="background: #ff9999;border: none; margin-left: -13px;padding: 5px 5px; id="H" title="Hydrogen"><sup>1</sup>H</td>
    <td style="background: none;border: none;" id="X" title="Unknown"><sup></sup></td>
    <td class="empty" colspan="14"></td>
    <td style="background: none;border: none;" id="X" title="Unknown"><sup></sup></td>
@@ -48,22 +131,22 @@ table.hide_optional tr.optional { display: none; }
    <td style="background: #ff9999;border: none; margin-left: -13px;padding: 5px 6.5px;"id="Li" title="Lithium"><sup>3</sup>Li</td>
    <td style="background: #ff9999;border: none; margin-left: -13px;padding: 5px 6.5px;"id="Be" title="Beryllium"><sup>4</sup>Be</td>
    <td class="empty" id="desc" colspan="10" rowspan="2"></td>
-   <td style="background: #ffff66;border: none; margin-left: -13px;padding: 5px 6.5px;""padding: 5px 5px;" id="B" title="Boron"><sup>5</sup>B</td>
-   <td style="background: #ffff66;border: none; margin-left: -13px;padding: 5px 6.5px;"" id="C" title="Carbon"><sup>6</sup>C</td>
-   <td style="background: #ffff66;border: none; margin-left: -13px;padding: 5px 6.5px;"" id="N" title="Nitrogen"><sup>7</sup>N</td>
-   <td style="background: #ffff66;border: none; margin-left: -13px;padding: 5px 6.5px;"" id="O" title="Oxygen"><sup>8</sup>O</td>
-   <td style="background: #ffff66;border: none; margin-left: -13px;padding: 5px 6.5px;"" id="F" title="Fluorine"><sup>9</sup>F</td>
-   <td style="background: #ffff66;border: none; margin-left: -13px;padding: 5px 6.5px;"" id="Ne" title="Neon"><sup>10</sup>Ne</td>
+   <td style="background: #ffff66;border: none; margin-left: -13px;padding: 5px 6.5px;padding: 5px 5px;" id="B" title="Boron"><sup>5</sup>B</td>
+   <td style="background: #ffff66;border: none; margin-left: -13px;padding: 7.5px 9px;" id="C" title="Carbon"><sup>6</sup>C</td>
+   <td style="background: #ffff66;border: none; margin-left: -13px;padding: 7.5px 9px;" id="N" title="Nitrogen"><sup>7</sup>N</td>
+   <td style="background: #ffff66;border: none; margin-left: -13px;padding: 7.5px 9px;" id="O" title="Oxygen"><sup>8</sup>O</td>
+   <td style="background: #ffff66;border: none; margin-left: -13px;padding: 7.5px 9px;" id="F" title="Fluorine"><sup>9</sup>F</td>
+   <td style="background: #ffff66;border: none; margin-left: -13px;padding: 7.5px 9px;" id="Ne" title="Neon"><sup>10</sup>Ne</td>
   </tr>
   <tr id="p3">
    <td style="background: #ff9999;border: none; margin-left: -13px;padding: 5px 6.5px;"id="Na" title="Sodium"><sup>11</sup>Na</td>
    <td style="background: #ff9999;border: none; margin-left: -13px;padding: 5px 6.5px;"id="Mg" title="Magnesium"><sup>12</sup>Mg</td>
-   <td style="background: #ffff66;border: none; margin-left: -13px;padding: 5px 6.5px;"" id="Al" title="Aluminium"><sup>13</sup>Al</td>
-   <td style="background: #ffff66;border: none; margin-left: -13px;padding: 5px 6.5px;"" id="Si" title="Silicon"><sup>14</sup>Si</td>
-   <td style="background: #ffff66;border: none; margin-left: -13px;padding: 5px 6.5px;"" id="P"  title="Phosphorus"><sup>15</sup>P</td>
-   <td style="background: #ffff66;border: none; margin-left: -13px;padding: 5px 6.5px;"" id="S"  title="Sulfur"><sup>16</sup>S</td>
-   <td style="background: #ffff66;border: none; margin-left: -13px;padding: 5px 6.5px;"" id="Cl" title="Chlorine"><sup>17</sup>Cl</td>
-   <td style="background: #ffff66;border: none; margin-left: -13px;padding: 5px 6.5px;"" id="Ar" title="Argon"><sup>18</sup>Ar</td>
+   <td style="background: #ffff66;border: none; margin-left: -13px;padding: 7.5px 9px;" id="Al" title="Aluminium"><sup>13</sup>Al</td>
+   <td style="background: #ffff66;border: none; margin-left: -13px;padding: 7.5px 9px;" id="Si" title="Silicon"><sup>14</sup>Si</td>
+   <td style="background: #ffff66;border: none; margin-left: -13px;padding: 7.5px 9px;" id="P"  title="Phosphorus"><sup>15</sup>P</td>
+   <td style="background: #ffff66;border: none; margin-left: -13px;padding: 7.5px 9px;" id="S"  title="Sulfur"><sup>16</sup>S</td>
+   <td style="background: #ffff66;border: none; margin-left: -13px;padding: 7.5px 9px;" id="Cl" title="Chlorine"><sup>17</sup>Cl</td>
+   <td style="background: #ffff66;border: none; margin-left: -13px;padding: 7.5px 9px;" id="Ar" title="Argon"><sup>18</sup>Ar</td>
   </tr>
   <tr id="p4">
    <td style="background: #ff9999;border: none; margin-left: -13px;padding: 5px 6.5px;"id="K"  title="Potassium"><sup>19</sup>K</td>
@@ -78,12 +161,12 @@ table.hide_optional tr.optional { display: none; }
    <td style="background: dodgerblue;border: none; margin-left: -13px;padding: 5px 6.5px;" id="Ni" title="Nickel"><sup>28</sup>Ni</td>
    <td style="background: dodgerblue;border: none; margin-left: -13px;padding: 5px 6.5px;" id="Cu" title="Copper"><sup>29</sup>Cu</td>
    <td style="background: dodgerblue;border: none; margin-left: -13px;padding: 5px 6.5px;" id="Zn" title="Zinc"><sup>30</sup>Zn</td>
-   <td style="background: #ffff66;border: none; margin-left: -13px;padding: 5px 6.5px;"" id="Ga" title="Gallium"><sup>31</sup>Ga</td>
-   <td style="background: #ffff66;border: none; margin-left: -13px;padding: 5px 6.5px;"" id="Ge" title="Germanium"><sup>32</sup>Ge</td>
-   <td style="background: #ffff66;border: none; margin-left: -13px;padding: 5px 6.5px;"" id="As" title="Arsenic"><sup>33</sup>As</td>
-   <td style="background: #ffff66;border: none; margin-left: -13px;padding: 5px 6.5px;"" id="Se" title="Selenium"><sup>34</sup>Se</td>
-   <td style="background: #ffff66;border: none; margin-left: -13px;padding: 5px 6.5px;"" id="Br" title="Bromine"><sup>35</sup>Br</td>
-   <td style="background: #ffff66;border: none; margin-left: -13px;padding: 5px 6.5px;"" id="Kr" title="Krypton"><sup>36</sup>Kr</td>
+   <td style="background: #ffff66;border: none; margin-left: -13px;padding: 7.5px 9px;" id="Ga" title="Gallium"><sup>31</sup>Ga</td>
+   <td style="background: #ffff66;border: none; margin-left: -13px;padding: 7.5px 9px;" id="Ge" title="Germanium"><sup>32</sup>Ge</td>
+   <td style="background: #ffff66;border: none; margin-left: -13px;padding: 7.5px 9px;" id="As" title="Arsenic"><sup>33</sup>As</td>
+   <td style="background: #ffff66;border: none; margin-left: -13px;padding: 7.5px 9px;" id="Se" title="Selenium"><sup>34</sup>Se</td>
+   <td style="background: #ffff66;border: none; margin-left: -13px;padding: 7.5px 9px;" id="Br" title="Bromine"><sup>35</sup>Br</td>
+   <td style="background: #ffff66;border: none; margin-left: -13px;padding: 7.5px 9px;" id="Kr" title="Krypton"><sup>36</sup>Kr</td>
   </tr>
   <tr id="p5">
    <td style="background: #ff9999;border: none; margin-left: -13px;padding: 5px 6.5px;"id="Rb" title="Rubidium"><sup>37</sup>Rb</td>
@@ -98,12 +181,12 @@ table.hide_optional tr.optional { display: none; }
    <td style="background: dodgerblue;border: none; margin-left: -13px;padding: 5px 6.5px;" id="Pd" title="Palladium"><sup>46</sup>Pd</td>
    <td style="background: dodgerblue;border: none; margin-left: -13px;padding: 5px 6.5px;" id="Ag" title="Silver"><sup>47</sup>Ag</td>
    <td style="background: dodgerblue;border: none; margin-left: -13px;padding: 5px 6.5px;" id="Cd" title="Cadmium"><sup>48</sup>Cd</td>
-   <td style="background: #ffff66;border: none; margin-left: -13px;padding: 5px 6.5px;"" id="In" title="Indium"><sup>49</sup>In</td>
-   <td style="background: #ffff66;border: none; margin-left: -13px;padding: 5px 6.5px;"" id="Sn" title="Tin"><sup>50</sup>Sn</td>
-   <td style="background: #ffff66;border: none; margin-left: -13px;padding: 5px 6.5px;"" id="Sb" title="Antimony"><sup>51</sup>Sb</td>
-   <td style="background: #ffff66;border: none; margin-left: -13px;padding: 5px 6.5px;"" id="Te" title="Tellurium"><sup>52</sup>Te</td>
-   <td style="background: #ffff66;border: none; margin-left: -13px;padding: 5px 6.5px;"" id="I"  title="Iodine"><sup>53</sup>I</td>
-   <td style="background: #ffff66;border: none; margin-left: -13px;padding: 5px 6.5px;"" id="Xe" title="Xenon"><sup>54</sup>Xe</td>
+   <td style="background: #ffff66;border: none; margin-left: -13px;padding: 7.5px 9px;" id="In" title="Indium"><sup>49</sup>In</td>
+   <td style="background: #ffff66;border: none; margin-left: -13px;padding: 7.5px 9px;" id="Sn" title="Tin"><sup>50</sup>Sn</td>
+   <td style="background: #ffff66;border: none; margin-left: -13px;padding: 7.5px 9px;" id="Sb" title="Antimony"><sup>51</sup>Sb</td>
+   <td style="background: #ffff66;border: none; margin-left: -13px;padding: 7.5px 9px;" id="Te" title="Tellurium"><sup>52</sup>Te</td>
+   <td style="background: #ffff66;border: none; margin-left: -13px;padding: 7.5px 9px;" id="I"  title="Iodine"><sup>53</sup>I</td>
+   <td style="background: #ffff66;border: none; margin-left: -13px;padding: 7.5px 9px;" id="Xe" title="Xenon"><sup>54</sup>Xe</td>
   </tr>
   <tr id="p6">
    <td style="background: #ff9999;border: none; margin-left: -13px;padding: 5px 6.5px;"id="Cs" title="Caesium"><sup>55</sup>Cs</td>
@@ -118,12 +201,12 @@ table.hide_optional tr.optional { display: none; }
    <td style="background: dodgerblue;border: none; margin-left: -13px;padding: 5px 6.5px;" id="Pt" title="Platinum"><sup>78</sup>Pt</td>
    <td style="background: dodgerblue;border: none; margin-left: -13px;padding: 5px 6.5px;" id="Au" title="Gold"><sup>79</sup>Au</td>
    <td style="background: dodgerblue;border: none; margin-left: -13px;padding: 5px 6.5px;" id="Hg" title="Mercury"><sup>80</sup>Hg</td>
-   <td style="background: #ffff66;border: none; margin-left: -13px;padding: 5px 6.5px;"" id="Tl" title="Thallium"><sup>81</sup>Tl</td>
-   <td style="background: #ffff66;border: none; margin-left: -13px;padding: 5px 6.5px;"" id="Pb" title="Lead"><sup>82</sup>Pb</td>
-   <td style="background: #ffff66;border: none; margin-left: -13px;padding: 5px 6.5px;"" id="Bi" title="Bismuth"><sup>83</sup>Bi</td>
-   <td style="background: #ffff66;border: none; margin-left: -13px;padding: 5px 6.5px;"" id="Po" title="Polonium"><sup>84</sup>Po</td>
-   <td style="background: #ffff66;border: none; margin-left: -13px;padding: 5px 6.5px;"" id="At" title="Astatine"><sup>85</sup>At</td>
-   <td style="background: #ffff66;border: none; margin-left: -13px;padding: 5px 6.5px;"" id="Rn" title="Radon"><sup>86</sup>Rn</td>
+   <td style="background: #ffff66;border: none; margin-left: -13px;padding: 7.5px 9px;" id="Tl" title="Thallium"><sup>81</sup>Tl</td>
+   <td style="background: #ffff66;border: none; margin-left: -13px;padding: 7.5px 9px;" id="Pb" title="Lead"><sup>82</sup>Pb</td>
+   <td style="background: #ffff66;border: none; margin-left: -13px;padding: 7.5px 9px;" id="Bi" title="Bismuth"><sup>83</sup>Bi</td>
+   <td style="background: #ffff66;border: none; margin-left: -13px;padding: 7.5px 9px;" id="Po" title="Polonium"><sup>84</sup>Po</td>
+   <td style="background: #ffff66;border: none; margin-left: -13px;padding: 7.5px 9px;" id="At" title="Astatine"><sup>85</sup>At</td>
+   <td style="background: #ffff66;border: none; margin-left: -13px;padding: 7.5px 9px;" id="Rn" title="Radon"><sup>86</sup>Rn</td>
   </tr>
   <tr id="p7">
    <td style="background: #ff9999;border: none; margin-left: -13px;padding: 5px 6.5px;"id="Fr" title="Francium"><sup>87</sup>Fr</td>
@@ -138,12 +221,12 @@ table.hide_optional tr.optional { display: none; }
    <td style="background: dodgerblue;border: none; margin-left: -13px;padding: 5px 6.5px;" id="Ds" title="Darmstadtium"><sup>110</sup>Ds</td>
    <td style="background: dodgerblue;border: none; margin-left: -13px;padding: 5px 6.5px;" id="Rg" title="Roentgenium"><sup>111</sup>Rg</td>
    <td style="background: dodgerblue;border: none; margin-left: -13px;padding: 5px 6.5px;" id="Cn" title="Copernicium"><sup>112</sup>Cn</td>
-   <td style="background: #ffff66;border: none; margin-left: -13px;padding: 5px 6.5px;"" id="Nh" title="Nihonium"><sup>113</sup>Nh</td>
-   <td style="background: #ffff66;border: none; margin-left: -13px;padding: 5px 6.5px;"" id="Fl" title="Flerovium"><sup>114</sup>Fl</td>
-   <td style="background: #ffff66;border: none; margin-left: -13px;padding: 5px 6.5px;"" id="Mc" title="Moscovium"><sup>115</sup>Mc</td>
-   <td style="background: #ffff66;border: none; margin-left: -13px;padding: 5px 6.5px;"" id="Lv" title="Livermorium"><sup>116</sup>Lv</td>
-   <td style="background: #ffff66;border: none; margin-left: -13px;padding: 5px 6.5px;"" id="Ts" title="Tennessine"><sup>117</sup>Ts</td>
-   <td style="background: #ffff66;border: none; margin-left: -13px;padding: 5px 6.5px;"" id="Og" title="Oganesson"><sup>118</sup>Og</td>
+   <td style="background: #ffff66;border: none; margin-left: -13px;padding: 7.5px 9px;" id="Nh" title="Nihonium"><sup>113</sup>Nh</td>
+   <td style="background: #ffff66;border: none; margin-left: -13px;padding: 7.5px 9px;" id="Fl" title="Flerovium"><sup>114</sup>Fl</td>
+   <td style="background: #ffff66;border: none; margin-left: -13px;padding: 7.5px 9px;" id="Mc" title="Moscovium"><sup>115</sup>Mc</td>
+   <td style="background: #ffff66;border: none; margin-left: -13px;padding: 7.5px 9px;" id="Lv" title="Livermorium"><sup>116</sup>Lv</td>
+   <td style="background: #ffff66;border: none; margin-left: -13px;padding: 7.5px 9px;" id="Ts" title="Tennessine"><sup>117</sup>Ts</td>
+   <td style="background: #ffff66;border: none; margin-left: -13px;padding: 7.5px 9px;" id="Og" title="Oganesson"><sup>118</sup>Og</td>
   </tr>
   <tr class="spacer"><td class="empty" colspan=18></td></tr>
   <tr >
