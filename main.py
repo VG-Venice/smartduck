@@ -34,4 +34,9 @@ def about_us():
 def dashboard():
   return render_template('dashboard.html', site_name="SmartDuck")
 
+@app.route('/chem_periodic_table')
+def periodic_table():
+  return render_template('chem_table.html', site_name="SmartDuck")
+
 app.run(host='0.0.0.0', port=81, debug=True)
+
