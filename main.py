@@ -1,6 +1,24 @@
 from flask import Flask, render_template
+from database import engine, load_element_from_db
+from sqlalchemy import text
 
 app = Flask(__name__)
+
+def clicked_element():
+  with engine.connect() as conn:
+    info = conn.execute(text("select * from elementsinfo"))
+  info_dict = []
+  for el_row in info.all():
+    info_dict.append(({
+      "Atomic Number": el_row.atomic_no,
+      "Symbol": el_row.id,
+      "Name": el_row.name,
+      "Valency": el_row.valency,
+      "Group Number": el_row.group_no,
+      "Period Number": el_row.period_no,
+      "State(Room temp.)": el_row.state_rt
+    }))
+  return info_dict
 
 
 @app.route('/')
@@ -25,7 +43,10 @@ def dashboard():
 
 @app.route('/chem_periodic_table')
 def periodic_table():
-  return render_template('chem_table.html', site_name="SmartDuck")
+  return render_template('chem_table.html', site_name="SmartDuck", elementsinfo =clicked_element(), valency = 1)
+
+@app.route('/el_information')
+def info_show():
+  return clicked_element()
 
 app.run(host='0.0.0.0', port=81, debug=True)
-
