@@ -87,6 +87,14 @@ optional = false
 python-versions = ">=3.7"
 
 [[package]]
+name = "numpy"
+version = "1.25.1"
+description = "Fundamental package for array computing in Python"
+category = "main"
+optional = false
+python-versions = ">=3.9"
+
+[[package]]
 name = "sqlalchemy"
 version = "2.0.18"
 description = "Database Abstraction Library"
@@ -147,7 +155,7 @@ watchdog = ["watchdog (>=2.3)"]
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.10"
-content-hash = "964a150a7c238c4f32cb216ee2290337cf7d77e7ae8d87d5072ac29d014dc3c2"
+content-hash = "224d875bedee929eb944315dae2939ad24551ccf72ece17b16e4a2f8a73a6af4"
 
 [metadata.files]
 blinker = []
@@ -158,6 +166,7 @@ greenlet = []
 itsdangerous = []
 jinja2 = []
 markupsafe = []
+numpy = []
 sqlalchemy = []
 typing-extensions = []
 werkzeug = []
