@@ -5,7 +5,7 @@ from sqlalchemy import text
 app = Flask(__name__)
 
 
-def clicked_element():
+def el_import():
   with engine.connect() as conn:
     info = conn.execute(text("select * from elementsinfo"))
   info_dict = []
@@ -49,16 +49,16 @@ def dashboard():
 
 @app.route('/chem_periodic_table')
 def periodic_table():
-  getPeriodicTableDataset()
-  return render_template('chem_table.html',
+  pTable = getPeriodicTableDataset()
+  el_import()
+  return render_template('chem2_table.html',
                          site_name="SmartDuck",
-                         elementsinfo=clicked_element(),
-                         valency=1)
+                         pTable=pTable,
+                        )
 
-
-@app.route('/el_information')
-def info_show():
-  return clicked_element()
+@app.route('/el_information/<int:id>')
+def info_show(id):
+  return el_import()
 
 
 app.run(host='0.0.0.0', port=81, debug=True)

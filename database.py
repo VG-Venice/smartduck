@@ -1,8 +1,7 @@
 from sqlalchemy import create_engine, text
-import numpy as np
 
 engine = create_engine(
-  "mysql+pymysql://9zyuj0rjgh87zjr5yeoo:pscale_pw_OXMduMy7qjZh8ou6EQCP5jKiL7vpbRdpcFVblAueBwg@aws.connect.psdb.cloud/smartduck?charset=utf8mb4",
+  "mysql+pymysql://tt7l8qpqfuqjgwlfjuwf:pscale_pw_rRXBcKM8U3k2DlSrYn9JXr8XQrEq04Z07GN0qVEunqm@aws.connect.psdb.cloud/smartduck?charset=utf8mb4",
   connect_args={"ssl": {
     "ssl_ca": "cert.pem"
   }})
@@ -19,8 +18,9 @@ def getPeriodicTableDataset():
       periodResult = conn.execute(
         text(f"select * from elementsinfo where posRow={p}"))
     for pr in periodResult:
-      pTable[pr.posRow][pr.posCol] = str(pr.atomic_no) + '-' + pr.id
-  print(pTable)
+      pTable[pr.posRow][pr.posCol] = str(
+        pr.atomic_no) + '-' + pr.id + '-' + pr.name + '-' + pr.eType
+  return pTable
 
 
 # def clicked_element():
