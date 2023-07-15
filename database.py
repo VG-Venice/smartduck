@@ -1,7 +1,7 @@
 from sqlalchemy import create_engine, text
 
 engine = create_engine(
-  "mysql+pymysql://tt7l8qpqfuqjgwlfjuwf:pscale_pw_rRXBcKM8U3k2DlSrYn9JXr8XQrEq04Z07GN0qVEunqm@aws.connect.psdb.cloud/smartduck?charset=utf8mb4",
+  "mysql+pymysql://pktdk9nr98uurvskssbu:pscale_pw_4iSVSiVxTeK5Vzk12BFq0DLbSAhmHCdd9V77UKJQG33@aws.connect.psdb.cloud/smartduck?charset=utf8mb4",
   connect_args={"ssl": {
     "ssl_ca": "cert.pem"
   }})
