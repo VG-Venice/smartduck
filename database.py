@@ -1,11 +1,6 @@
 from sqlalchemy import create_engine, text
 import os
 
-# database: smartduck
-# username: mwa1g3fkgfc8jt4l9bmu
-# host: aws.connect.psdb.cloud
-# password: pscale_pw_R7hzkuBcIi23wJ0tAYmHLE8nbwYnWfYdJK3E7vpVd30
-
 db_conn_str = os.environ['DB_CONN_STR']
 
 engine = create_engine(db_conn_str,
