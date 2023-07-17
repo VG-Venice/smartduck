@@ -1,16 +1,17 @@
 from sqlalchemy import create_engine, text
+import os
 
 # database: smartduck
-# username: i7yk9iulcu8yydwbfyeu
+# username: mwa1g3fkgfc8jt4l9bmu
 # host: aws.connect.psdb.cloud
-# password: pscale_pw_tdHlXW0kKhr44BPbiYjmkC6DPLPMAHMDcA2hFQfNJCm
+# password: pscale_pw_R7hzkuBcIi23wJ0tAYmHLE8nbwYnWfYdJK3E7vpVd30
 
+db_conn_str = os.environ['DB_CONN_STR']
 
-engine = create_engine( "mysql+pymysql://i7yk9iulcu8yydwbfyeu:pscale_pw_tdHlXW0kKhr44BPbiYjmkC6DPLPMAHMDcA2hFQfNJCm@aws.connect.psdb.cloud/smartduck?charset=utf8mb4",
+engine = create_engine(db_conn_str,
   connect_args={"ssl": {
     "ssl_ca": "cert.pem"
   }})
-
 
 def getPeriodicTableDataset():
   _rows = 10
