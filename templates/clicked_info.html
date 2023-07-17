@@ -1,9 +1,55 @@
-<div class="card" style="width: 18rem;">
+{% include 'links.html' %}
+<style>
+  body{
+    background-color: #001133;
+  }
+  label{
+    font-size: 30px;
+    font-family: 'Mouse Memoirs', sans-serif;
+    color: #ffff66;
+  }
+  .card{
+    background-color: dodgerblue;
+    opacity: 1;
+    box-shadow: 10px 10px 30px #ffff66;
+  }
+  h5, p{
+    color: white;
+    font-family: 'Mouse Memoirs', sans-serif;
+    font-size: 24px;
+    display: inline;
+  }
+  button{
+    background-color: #001133;
+    color: white;
+    border: none;
+    text-shadow: 4px 3px 14px white;
+    margin-left: 12px;
+    margin-top: 10px;
+  }
+</style>
+
+<a href="/chem_periodic_table">
+  <button>
+  <i class="fa-solid fa-arrow-left mx-2"></i>Go back
+</button>
+</a>
+<div style="display: flex;">
+<div class="card" style="width: 30%;align-items: center;justify-content: center;margin: auto;position: absolute;top: 50%;left: 50%;transform: translate(-50%, -50%);">
   <div class="card-body">
-    <h6 class="card-subtitle mb-2 text-body-secondary">{{elementsinfo['atomic_no']}}</h6>
-        <h5 class="card-title">{{elementsinfo['id']}}</h5>
-    <p class="card-text">{{elementsinfo['name']}}</p>
-    <p class="card-link">Card link</p>
-    <p class="card-link">Another link</p>
+    <label class="mx-2">Atomic Number: </label>
+    <h5 style="color: white;font-family: 'Mouse Memoirs', sans-serif;font-size: 24px;" class="card-title mb-2">{{importer.atomic_no}}</h5><br>
+        <label class="mx-2">Symbol: </label>
+    <p class="card-link mb-2">{{importer.symbol}}</p><br>
+        <label class="mx-2">Element Name: </label>
+    <p class="card-text mb-2">{{importer.name}}</p><br>
+        <label class="mx-2">Valency: </label>
+    <p class="card-link mb-2">{{importer.valency}}</p><br>
+        <label class="mx-2">State at Room Temperature: </label>
+    <p class="card-link mb-2">{{importer.state_rt}}</p><br>
+        <label class="mx-2">Type of Element: </label>
+    <p class="card-link mb-2">{{importer.eType}}</p>
+
   </div>
+</div>
 </div>

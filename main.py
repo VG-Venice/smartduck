@@ -5,14 +5,14 @@ from sqlalchemy import text
 app = Flask(__name__)
 
 
-def el_import():
+def el_import(id):
   with engine.connect() as conn:
     info = conn.execute(text("select * from elementsinfo"))
   info_dict = []
   for el_row in info.all():
     info_dict.append(({
       "Atomic Number": el_row.atomic_no,
-      "Symbol": el_row.id,
+      "Symbol": el_row.symbol,
       "Name": el_row.name,
       "Valency": el_row.valency,
       "Group Number": el_row.group_no,
@@ -22,6 +22,32 @@ def el_import():
     }))
   return info_dict
 
+def load_element_from_db(id):
+  with engine.connect() as conn:
+    info = conn.execute(text(f"SELECT * FROM elementsinfo WHERE id ={id}"))
+    rows = []
+    for row in info.all():
+      rows.append(({
+      "Atomic Number": row.atomic_no,
+      "Symbol": row.id,
+      "Name": row.name,
+      "Valency": row.valency,
+      "Group Number": row.group_no,
+      "Period Number": row.period_no,
+      "State(Room temp.)": row.state_rt,
+      "Element Type": row.eType
+      }))
+    if len(rows) == 0:
+      return None
+    else:
+      return row
+
+
+def data_importer():
+  with engine.connect() as conn:
+    a = 50
+    
+    # create an empty list and append values of clicked element to it
 
 @app.route('/')
 def home_screen():
@@ -51,18 +77,21 @@ def dashboard():
 @app.route('/chem_periodic_table')
 def periodic_table():
   pTable = getPeriodicTableDataset()
-  el_import()
+  el_import(id)
   return render_template(
     'chem2_table.html',
     site_name="SmartDuck",
-    pTable=pTable
+    pTable=pTable,
+    id = id
   )
 
 
-@app.route('/el_information/<int:atomic_no>')
-def info_show(atomic_no):
-  importer = el_import()
-  return importer[atomic_no-1]
-
-
+@app.route('/el_information/<id>')
+def info_show(id):
+    importer = load_element_from_db(id)
+    return render_template('clicked_info.html',
+                         site_name="SmartDuck",
+                         importer = importer
+                        )
+  
 app.run(host='0.0.0.0', port=81, debug=True)
