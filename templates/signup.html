@@ -1,1 +1,90 @@
-Signup
+{% include 'links.html' %}
+<style>
+    sup{
+    font-weight: 550;
+    font-family: 'Mouse Memoirs', sans-serif;
+  }
+  table, th, td {
+  border: 1px solid white;
+  border-collapse: collapse;
+}
+    #app_icon{
+        color: mediumpurple;
+        font-size:26px;
+      }
+      nav{
+        background-color: #001133;
+        font-family: 'Mouse Memoirs', sans-serif;
+      }
+      #login a, #signup a{
+        color: white;
+      }
+      #navbar{
+        font-family: 'Mouse Memoirs', sans-serif;
+      }
+      header{
+        background-image: url('/static/bg.jpg');
+        background-repeat: no-repeat;
+        height: 60vw;
+        background-size: cover;
+      }
+  label{
+    font-size: 30px;
+    font-family: 'Mouse Memoirs', sans-serif;
+    color: #ffff66;
+  }
+  .bgimg2{
+    background-image: url("/static/bgimg2.jpg");
+    background-size: cover;
+    width: 60%;
+    height: 92.75vh;
+  }
+  .sectioner{
+    width: 100%;
+  }
+  .bgimg2, .bgimg3{
+    display: inline-block;
+  }
+</style>
+<nav style="box-shadow: 10px 10px 20px white;font-family: 'Mouse Memoirs', sans-serif;" id="navbar">
+<ul class="mx-2 nav nav-pills">
+  <li class="nav-item mx-2">
+    <a style="color: mediumpurple;font-size: 28px;" id="app_icon" class="nav-link" href="/">{{site_name}}</a>
+  </li>
+  <li class="nav-item mt-2">
+    <a style="color: white;margin-left: 24vw;" class="nav-link" href="/"> Home</a>
+  </li>
+    <li class="nav-item mt-2">
+    <a style="color: white;" class="nav-link" href="/about_us"> About us</a>
+  </li>
+      <li class="nav-item mt-2">
+    <a style="color: white;" class="nav-link" href="#"> Physics</a>
+  </li>
+      <li class="nav-item mt-2">
+    <a style="color: white;" class="nav-link" href="/chem_periodic_table"> Chemistry</a>
+  </li>
+        <li class="nav-item mt-2">
+    <a style="color: white;" class="nav-link" href="https://smartduck-calc.netlify.app"> Maths</a>
+  </li>
+    <li style="margin-left: 33%;" id="login" class="nav-item mt-2">
+    <a style="color: white;" class="nav-link" href="/login"> Login</a>
+  </li>
+  <li id="signup" class="nav-item mt-2">
+    <a style="color: white;" href="/signup" class="nav-link"> SignUp</a>
+  </li>
+</ul>
+    </nav>
+  <div class="sectioner">
+<div class="bgimg2"></div>
+<div class="bgimg3">
+  <i class="fa-solid fa-user"></i><br>
+  <label for="fullname">Full Name:</label>
+  <input type="text" name="fullname" id="fullname" placeholder="Enter full name"/><br>
+    <label for="fullname">Username:</label>
+  <input type="text" name="username" id="username" placeholder="Enter username"/><br>
+    <label for="fullname">Email:</label>
+  <input type="email" name="email" id="email" placeholder="Enter email"/><br>
+    <label for="fullname">Password:</label>
+  <input type="password" name="password" id="password" placeholder="Enter password"/><br>
+</div>
+    </div>
