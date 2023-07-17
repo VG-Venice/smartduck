@@ -17,7 +17,8 @@ def el_import():
       "Valency": el_row.valency,
       "Group Number": el_row.group_no,
       "Period Number": el_row.period_no,
-      "State(Room temp.)": el_row.state_rt
+      "State(Room temp.)": el_row.state_rt,
+      "Element Type": el_row.eType
     }))
   return info_dict
 
