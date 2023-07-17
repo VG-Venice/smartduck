@@ -2,14 +2,11 @@
  <style>
    a{
     text-decoration: none;
-     color: white;
+    color: white;
   }
   ul li{
         font-size: 18px;
       }
-   *{
-     font-family: 'Mouse Memoirs', sans-serif;
-   }
    .Metal{
      background-color: #fce303;
      color: black;
@@ -32,6 +29,7 @@
  
   sup{
     font-weight: 550;
+    font-family: 'Mouse Memoirs', sans-serif;
   }
   table, th, td {
   border: 1px solid white;
@@ -43,12 +41,14 @@
       }
       nav{
         background-color: none;
+        font-family: 'Mouse Memoirs', sans-serif;
       }
       #login a, #signup a{
         color: white;
       }
       #navbar{
         box-shadow: 10px 10px 20px white;
+        font-family: 'Mouse Memoirs', sans-serif;
       }
       header{
         background-image: url('/static/bg.jpg');
@@ -91,8 +91,14 @@
       display: block;
       text-align: center;
     }
- </style>
- <nav style="box-shadow: 10px 10px 20px white;" id="navbar">
+    span{
+      font-family: 'Roboto', sans-serif;
+    }
+    a{
+      font-family: 'Roboto', sans-serif;
+    }
+    </style>
+ <nav style="box-shadow: 10px 10px 20px white;font-family: 'Mouse Memoirs', sans-serif;" id="navbar">
 <ul class="mx-2 nav nav-pills">
   <li class="nav-item mx-2">
     <a style="color: mediumpurple;font-size: 28px;" id="app_icon" class="nav-link" href="/">{{site_name}}</a>
@@ -128,7 +134,7 @@
     <tr style="color: white">
       {%for it in period%}
       {% set list1 = it.split('-') %}
-      <td style="margin-left: -13px;padding: 13.5px 14.5px;padding-top: 21px;" class="{{list1[3]}}" title="{{list1[2]}}"><div class="parent_el"><div class="child_el"><sup style="color: black;font-size: 12px;margin-left: 3.5px;"><a class="el_val" href="/el_information/<id>">{{list1[0]}}</a></sup></div><div class="child_el"><span style="font-size: 20px;" class="{{list1[3]}}"><a class="el_val" href="/el_information/{{list1[0]}}">{{list1[1]}}</a></span></div></div></td>
+      <td style="margin-left: -13px;padding: 13.5px 14.5px;padding-top: 21px;" class="{{list1[3]}}" title="{{list1[2]}}"><div class="parent_el"><div class="child_el"><sup style="color: black;font-size: 12px;margin-left: 5.5px;;font-weight: normal;"><a class="el_val" href="/el_information/{{list1[0]}}" style="color: black;font-family: 'Mouse Memoirs', sans-serif;">{{list1[0]}}</a></sup></div><div class="child_el"><span style="font-size: 15px;font-weight: 800;" class="{{list1[3]}}"><a style="color: #001133;" class="el_val" href="/el_information/{{list1[0]}}">{{list1[1]}}</a></span></div></div></td>
       {%endfor%}
     </tr>
   {%endfor%}

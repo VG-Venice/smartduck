@@ -1,6 +1,38 @@
 {% include 'links.html' %}
 <style>
   body{
+    background-color: #001132;
+    color: black;}
+  sup{
+    font-weight: 550;
+    font-family: 'Mouse Memoirs', sans-serif;
+  }
+  table, th, td {
+  border: 1px solid white;
+  border-collapse: collapse;
+}
+    #app_icon{
+        color: mediumpurple;
+        font-size:26px;
+      }
+      nav{
+        background-color: none;
+        font-family: 'Mouse Memoirs', sans-serif;
+      }
+      #login a, #signup a{
+        color: white;
+      }
+      #navbar{
+        box-shadow: 10px 10px 20px white;
+        font-family: 'Mouse Memoirs', sans-serif;
+      }
+      header{
+        background-image: url('/static/bg.jpg');
+        background-repeat: no-repeat;
+        height: 60vw;
+        background-size: cover;
+      }
+  body{
     background-color: #001133;
   }
   label{
@@ -20,18 +52,45 @@
     display: inline;
   }
   button{
-    background-color: #001133;
+    background-color: transparent;
     color: white;
     border: none;
     text-shadow: 4px 3px 14px white;
-    margin-left: 12px;
-    margin-top: 10px;
+    margin-left: 10px;
+    margin-top: 15px;
   }
 </style>
-
+<nav style="box-shadow: 10px 10px 20px white;font-family: 'Mouse Memoirs', sans-serif;" id="navbar">
+<ul class="mx-2 nav nav-pills">
+  <li class="nav-item mx-2">
+    <a style="color: mediumpurple;font-size: 28px;" id="app_icon" class="nav-link" href="/">{{site_name}}</a>
+  </li>
+  <li class="nav-item mt-2">
+    <a style="color: white;margin-left: 24vw;" class="nav-link" href="/"> Home</a>
+  </li>
+    <li class="nav-item mt-2">
+    <a style="color: white;" class="nav-link" href="/about_us"> About us</a>
+  </li>
+      <li class="nav-item mt-2">
+    <a style="color: white;" class="nav-link" href="#"> Physics</a>
+  </li>
+      <li class="nav-item mt-2">
+    <a style="color: white;" class="nav-link" href="/chem_periodic_table"> Chemistry</a>
+  </li>
+        <li class="nav-item mt-2">
+    <a style="color: white;" class="nav-link" href="https://smartduck-calc.netlify.app"> Maths</a>
+  </li>
+    <li style="margin-left: 33%;" id="login" class="nav-item mt-2">
+    <a style="color: white;" class="nav-link" href="/login"> Login</a>
+  </li>
+  <li id="signup" class="nav-item mt-2">
+    <a style="color: white;" href="/signup" class="nav-link"> SignUp</a>
+  </li>
+</ul>
+    </nav>
 <a href="/chem_periodic_table">
   <button>
-  <i class="fa-solid fa-arrow-left mx-2"></i>Go back
+  <i class="fa-solid fa-arrow-left mx-3"></i>Go back
 </button>
 </a>
 <div style="display: flex;">
