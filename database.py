@@ -1,7 +1,12 @@
 from sqlalchemy import create_engine, text
 
-engine = create_engine(
-  "mysql+pymysql://pktdk9nr98uurvskssbu:pscale_pw_4iSVSiVxTeK5Vzk12BFq0DLbSAhmHCdd9V77UKJQG33@aws.connect.psdb.cloud/smartduck?charset=utf8mb4",
+# database: smartduck
+# username: i7yk9iulcu8yydwbfyeu
+# host: aws.connect.psdb.cloud
+# password: pscale_pw_tdHlXW0kKhr44BPbiYjmkC6DPLPMAHMDcA2hFQfNJCm
+
+
+engine = create_engine( "mysql+pymysql://i7yk9iulcu8yydwbfyeu:pscale_pw_tdHlXW0kKhr44BPbiYjmkC6DPLPMAHMDcA2hFQfNJCm@aws.connect.psdb.cloud/smartduck?charset=utf8mb4",
   connect_args={"ssl": {
     "ssl_ca": "cert.pem"
   }})
@@ -18,8 +23,7 @@ def getPeriodicTableDataset():
       periodResult = conn.execute(
         text(f"select * from elementsinfo where posRow={p}"))
     for pr in periodResult:
-      pTable[pr.posRow][pr.posCol] = str(
-        pr.atomic_no) + '-' + pr.id + '-' + pr.name + '-' + pr.eType
+      pTable[pr.posRow][pr.posCol] = str(pr.atomic_no) + '-' + pr.id + '-' + pr.name + '-' + pr.eType + '-'+ str(pr.valency)
   return pTable
 
 

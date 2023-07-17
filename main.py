@@ -51,14 +51,17 @@ def dashboard():
 def periodic_table():
   pTable = getPeriodicTableDataset()
   el_import()
-  return render_template('chem2_table.html',
-                         site_name="SmartDuck",
-                         pTable=pTable,
-                        )
+  return render_template(
+    'chem2_table.html',
+    site_name="SmartDuck",
+    pTable=pTable
+  )
 
-@app.route('/el_information/<int:id>')
-def info_show(id):
-  return el_import()
+
+@app.route('/el_information/<int:atomic_no>')
+def info_show(atomic_no):
+  importer = el_import()
+  return importer[atomic_no-1]
 
 
 app.run(host='0.0.0.0', port=81, debug=True)
