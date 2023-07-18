@@ -22,7 +22,12 @@ def getPeriodicTableDataset():
       pTable[pr.posRow][pr.posCol] = str(pr.atomic_no) +'-'+ pr.symbol +'-'+ pr.name +'-'+ pr.eType + '-'+ str(pr.valency)
   return pTable
 
-
+def add_account_to_db(data):
+  with engine.connect() as conn:
+      conn.execute(
+        text(
+          f"INSERT INTO accounts (full_name, user_name, user_email, pass_word) VALUES('{data['fullname']}', '{data['username']}',  '{data['email']}', '{data['password']}')"
+        ))  
 # def clicked_element():
 #   with engine.connect() as conn:
 #     info = conn.execute(text("select * from elementsinfo"))

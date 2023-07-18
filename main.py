@@ -1,5 +1,5 @@
-from flask import Flask, render_template
-from database import engine, getPeriodicTableDataset
+from flask import Flask, render_template, request
+from database import engine, getPeriodicTableDataset, add_account_to_db
 from sqlalchemy import text
 
 app = Flask(__name__)
@@ -42,21 +42,16 @@ def load_element_from_db(id):
     else:
       return row
 
-
-def data_importer():
-  with engine.connect() as conn:
-    a = 50
-    
-    # create an empty list and append values of clicked element to it
-
 @app.route('/')
 def home_screen():
   return render_template('home.html', site_name="SmartDuck")
 
 
-@app.route('/login')
+@app.route('/login', methods=['post'])
 def login():
-  return render_template('login.html', site_name="SmartDuck")
+  data = request.form
+  add_account_to_db(data)
+  return render_template('login.html', site_name="SmartDuck", accountinfo = data)
 
 
 @app.route('/signup')
@@ -93,5 +88,5 @@ def info_show(id):
                          site_name="SmartDuck",
                          importer = importer
                         )
-  
+
 app.run(host='0.0.0.0', port=81, debug=True)
